@@ -11,6 +11,8 @@ public class Basic {
 	public void Demo()
 	{
 		System.out.println("hello");
+		System.out.println("This is the Git from the another person");
+		System.out.println("Hello from the 2nd Developer");
 	}
 	
 	@AfterSuite
