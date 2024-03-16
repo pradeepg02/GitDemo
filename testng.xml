@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="testngcodes.Listeners"></listener>
+	</listeners>
+	<!--<parameter name="URL" value="usopen.com"></parameter> -->  <!-- Used to give the URL using this parameter - suite level-->
+	
+  <test name="Personal Loan XML File Test">
+	  <parameter name="URL" value="personalloan.com"></parameter>  <!-- Used to give the URL using this parameter - I gave at the test level, So that it will fetch according to test name Personalloan.com will get printed-->
+	  <parameter name="API/username" value="123456"></parameter> <!-- We can add many parameter as well-->
+    <classes>
+      <class name="testngcodes.Basic">
+		  <methods>
+			  <include name="Demo"></include>   <!-- To include only those mentioned methods-->
+		  </methods>
+      </class>
+      <class name="testngcodes.Basics2"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Car and Home Loan XML File Test">
+	  <parameter name="URL" value="carloan.com"></parameter>  <!-- Used to give the URL using this parameter - I gave at the test level, So that it will fetch according to test name carloan.com will get printed-->
+    <classes>
+      <class name="testngcodes.Basics3">
+		  <methods>
+			  <exclude name="Home.*"></exclude>  <!-- To exclude certain methods by that common word Car, any other words can be there after that-->
+		  </methods>
+		  
+      </class>
+    </classes>
+  </test>
+</suite> <!-- Suite -->
